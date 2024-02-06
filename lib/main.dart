@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 
-import 'catsPage.dart';
+import 'screens/cats_page.dart';
+import 'constants/enviroment.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-void main() {
-  runApp(const MyApp());
+void main() async {
+  await Enviroment.initEnviroment();
+  runApp(const ProviderScope(child: MyApp()));
 }
 
 class MyApp extends StatefulWidget {
@@ -24,7 +27,7 @@ class _MyAppState extends State<MyApp> {
       initialRoute: '/cats',
 
       routes: {
-        '/cats': (context) => const catsPage(),
+        '/cats': (context) => const CatsPage(),
       },
     );
   }
