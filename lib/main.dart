@@ -7,6 +7,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 void main() async {
   await Enviroment.initEnviroment();
+  WidgetsFlutterBinding.ensureInitialized();
 
   SystemChrome.setPreferredOrientations([
     DeviceOrientation.portraitUp, // Bloquea la orientación vertical

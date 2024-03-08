@@ -43,7 +43,7 @@ dependencies:
   flutter_dotenv: ^5.1.0
   dio: ^5.4.0
  
-  flutter_native_splash: ^2.2.18
+  flutter_native_splash: ^2.3.1
    
 
 dev_dependencies:
