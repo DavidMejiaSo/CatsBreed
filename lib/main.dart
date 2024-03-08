@@ -1,11 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
-import 'screens/cats_page.dart';
+import 'screens/landing_page.dart';
 import 'constants/enviroment.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 void main() async {
   await Enviroment.initEnviroment();
+
+  SystemChrome.setPreferredOrientations([
+    DeviceOrientation.portraitUp, // Bloquea la orientación vertical
+    // Agrega otras orientaciones que desees bloquear
+  ]);
   runApp(const ProviderScope(child: MyApp()));
 }
 

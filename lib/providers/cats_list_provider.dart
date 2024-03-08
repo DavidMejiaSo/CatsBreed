@@ -36,7 +36,7 @@ class CatsState {
   //Stado de los datos que se requieran usar, sea loaders
 
   final bool isLoading;
-  final List<CatsInfo> allCats;
+  final List<Cat> allCats;
 
   CatsState({
     this.isLoading = false,
@@ -45,7 +45,7 @@ class CatsState {
 
   CatsState copyWith({
     bool? isLoading,
-    List<CatsInfo>? allCats,
+    List<Cat>? allCats,
   }) =>
       CatsState(
         isLoading: isLoading ?? this.isLoading,

@@ -1,14 +1,17 @@
 import '../entities/cat.dart';
 
-class CatsInfoMapper {
-  static List<CatsInfo> jsonToEntityList(List<dynamic> jsonDataList) {
+class CatMapper {
+  static List<Cat> jsonToEntityList(List<dynamic> jsonDataList) {
     //Mapper de datos
-    List<CatsInfo> catsList = [];
+    List<Cat> catsList = [];
+    String urlImage = 'https://cdn2.thecatapi.com/images/';
 
     for (var jsonData in jsonDataList) {
       String id = jsonData['id'];
       String name = jsonData['name'];
       String origin = jsonData['origin'];
+      String image =
+          '${urlImage}${jsonData['reference_image_id']}.jpg'; //Iamgen de los gatitos
       String temperament = jsonData['temperament'];
       String description = jsonData['description'];
       String lifeSpan = jsonData['life_span'];
@@ -28,9 +31,10 @@ class CatsInfoMapper {
       String weightImperial = jsonData['weight']['imperial'];
       String weightMetric = jsonData['weight']['metric'];
 
-      CatsInfo cat = CatsInfo(
+      Cat cat = Cat(
         id: id,
         name: name,
+        urlImage: image,
         origin: origin,
         temperament: temperament,
         description: description,

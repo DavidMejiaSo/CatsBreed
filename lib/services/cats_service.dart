@@ -13,7 +13,8 @@ class CatsListData {
           'key': Enviroment.key,
           'content-type': 'application/json'
         }));
-  Future<List<CatsInfo>> getCatsList() async {
+  Future<List<Cat>> getCatsList() async {
+    //----Trae listado de gatos
     final Response<List<dynamic>> response = await dio.get<List<dynamic>>(
       '/breeds',
     );
@@ -21,8 +22,7 @@ class CatsListData {
     // Verifica si hay datos en la respuesta
     if (response.data != null) {
       // Convierte la lista de datos en objetos CatsInfo
-      final List<CatsInfo> catsList =
-          CatsInfoMapper.jsonToEntityList(response.data!);
+      final List<Cat> catsList = CatMapper.jsonToEntityList(response.data!);
 
       return catsList;
     } else {

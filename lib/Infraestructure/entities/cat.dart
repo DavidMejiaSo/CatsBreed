@@ -1,7 +1,8 @@
-class CatsInfo {
+class Cat {
   final String? id;
   final String name;
   final String origin;
+  final String urlImage;
   final String temperament;
   final String description;
   final String lifeSpan;
@@ -21,10 +22,11 @@ class CatsInfo {
   final String weightImperial;
   final String weightMetric;
 
-  CatsInfo({
+  Cat({
     this.id,
     required this.name,
     required this.origin,
+    required this.urlImage,
     required this.temperament,
     required this.description,
     required this.lifeSpan,
@@ -45,10 +47,11 @@ class CatsInfo {
     required this.weightMetric,
   });
 
-  CatsInfo copyWith({
+  Cat copyWith({
     String? id,
     String? name,
     String? origin,
+    String? urlImage,
     String? temperament,
     String? description,
     String? lifeSpan,
@@ -68,8 +71,10 @@ class CatsInfo {
     String? weightImperial,
     String? weightMetric,
   }) {
-    return CatsInfo(
+    return Cat(
       id: id ?? this.id,
+      weightMetric: weightMetric ?? this.weightMetric,
+      urlImage: urlImage ?? this.urlImage,
       name: name ?? this.name,
       origin: origin ?? this.origin,
       temperament: temperament ?? this.temperament,
@@ -89,7 +94,6 @@ class CatsInfo {
       vocalisation: vocalisation ?? this.vocalisation,
       hypoallergenic: hypoallergenic ?? this.hypoallergenic,
       weightImperial: weightImperial ?? this.weightImperial,
-      weightMetric: weightMetric ?? this.weightMetric,
     );
   }
 }
